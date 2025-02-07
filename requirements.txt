@@ -1,0 +1,6 @@
+crewai==0.100.1
+streamlit==1.41.1
+tavily-python==0.5.0
+python-dotenv==1.0.0
+langchain-google-genai==0.0.7
+pydantic==2.10.0
