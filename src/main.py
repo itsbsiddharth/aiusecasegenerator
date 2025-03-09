@@ -57,10 +57,13 @@ def crew(company_name: str, industry: str):
     )
 
     resource_task = Task(
-        description=f"""For each approved use case,Iteratively gather resources for each use case with clickable links. collect:
-        1. Relevant datasets from Kaggle/HuggingFace
+        description=f"""For each approved use case, iteratively gather resources with clickable links, including:
+
+        1. Relevant datasets from Kaggle and HuggingFace
+
         2. Open-source models from GitHub
-        3. Research papers and case studies
+        3. Research papers, case studies, and tools
+
         4. Tools and frameworks required
         Include links and brief descriptions.""",
         expected_output="Curated resource list with technical specifications and implementation guides.",
@@ -88,4 +91,3 @@ def crew(company_name: str, industry: str):
             resource_task.output.raw
         ]
     }
-

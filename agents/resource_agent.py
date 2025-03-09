@@ -24,8 +24,10 @@ def create_resource_agent():
         4. Framework documentation""",
         backstory="Expert ML engineer with 10+ years in technical resource curation",
         tools=[SearchTool()],
-        max_iter=7,  # Increased from default 3
-        max_rpm=15,  # Rate limiting for API calls
+        max_iter=10,  # Increased from default 3
+
+        max_rpm=20,  # Rate limiting for API calls
+
         llm=llm,
         verbose=True,
         memory=True,

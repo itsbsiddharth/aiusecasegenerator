@@ -16,7 +16,8 @@ class SearchTool(BaseTool):
                 raise ValueError("Tavily API key not found in environment variables.")
 
             tavily = TavilyClient(api_key=tavily_api_key)
-            response = tavily.search(query=query, max_results=5)
+            response = tavily.search(query=query, max_results=15)
+
             
             # Format the results
             formatted_results = []
