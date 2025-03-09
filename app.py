@@ -2,6 +2,12 @@
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# try:
+#     import pysqlite3
+#     import sys
+#     sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# except ImportError:
+#     pass
 
 import streamlit as st
 from src.main import crew
@@ -36,16 +42,11 @@ if generate_button:
                 if result and "tasks_output" in result:
                     st.success("Report Generated Successfully!")
                     
-                    col1, col2, col3 = st.columns(3)
-                    
-                    with col1:
-                        display_section("📊 Industry Analysis", result["tasks_output"][0])
-                        
-                    with col2:
-                        display_section("💡 AI Use Cases", result["tasks_output"][1])
-                        
-                    with col3:
-                        display_section("🛠️ Implementation Resources", result["tasks_output"][2])
+                    # Display the contents on the main page
+                    display_section("📊 Industry Analysis", result["tasks_output"][0])
+                    display_section("💡 AI Use Cases", result["tasks_output"][1])
+                    display_section("🛠️ Implementation Resources", result["tasks_output"][2])
+
                     
                     # Optional: Add download button
                     report_content = f"# AI Use Case Report for {company_name}\n\n"
